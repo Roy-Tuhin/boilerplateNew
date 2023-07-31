@@ -33,7 +33,7 @@ class _SplashViewState extends ConsumerState<SplashView> with BaseScreenView {
         children: [
           Padding(
             padding: const EdgeInsets.all(AppSizes.p20),
-            child: Image.asset("assets/images/glitz-logo.png"),
+            child: Image.asset("assets/images/dummy.png"),
           )
         ],
       ),

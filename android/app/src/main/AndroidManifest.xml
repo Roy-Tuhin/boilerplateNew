@@ -2,7 +2,7 @@
     package="com.garments.app">
   
    <application
-        android:label="Glitz Streamline"
+        android:label="Boilerplate Dart3"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
