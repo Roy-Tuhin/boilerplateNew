@@ -45,7 +45,7 @@ class _SplashViewState extends ConsumerState<SplashView> with BaseScreenView {
     // TODO: implement navigateToScreen
 
     context.replaceNamed(
-      appRoute.name, params: params ?? {},
+      appRoute.name,
       // {"fid": NavBarScreens.data[1].id},
     );
   }

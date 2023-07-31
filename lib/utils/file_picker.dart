@@ -187,7 +187,7 @@ Future<File?> pickImage(ImageSource source,
   // SnackbarService _snackbarService = locator<SnackbarService>();
 
   // ignore: deprecated_member_use
-  PickedFile? imagePickedFile = await ImagePicker().getImage(
+  XFile? imagePickedFile = await ImagePicker().pickImage(
       source: source,
       preferredCameraDevice: preferredCameraDevice,
       imageQuality: 50,
@@ -247,8 +247,8 @@ Future<File?> pickImage(ImageSource source,
 
 Future<File?> pickVideo(ImageSource source) async {
   // ignore: prefer_final_locals
-  PickedFile? imagePickedFile = await ImagePicker()
-      .getVideo(source: source, maxDuration: const Duration(seconds: 30));
+  XFile? imagePickedFile = await ImagePicker()
+      .pickVideo(source: source, maxDuration: const Duration(seconds: 30));
   if (imagePickedFile != null) {
     return File(imagePickedFile.path);
   } else {

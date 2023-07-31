@@ -12,8 +12,8 @@ class ApiClient {
 
   ApiClient() {
     // dio.options.baseUrl = Environment.value.baseUrl!;
-    dio.options.connectTimeout = const Duration(minutes: 3).inMilliseconds;
-    dio.options.receiveTimeout = const Duration(minutes: 3).inMilliseconds;
+    dio.options.connectTimeout = const Duration(milliseconds: 3000);
+    dio.options.receiveTimeout = const Duration(milliseconds: 3000);
     // if (Environment.value.environmentType != EnvType.PRODUCTION) {
     //   dio.interceptors.add(
     //     PrettyDioLogger(
@@ -37,7 +37,7 @@ class ApiClient {
           data: data,
           options: Options(headers: {"Cookie": "jwt=${AppConstants.token}"}));
     } on DioError catch (e) {
-      Logger.write(e.message);
+      Logger.write(e.message.toString());
       throw ApiException(e.response!.data["message"].toString());
     }
   }
@@ -46,7 +46,7 @@ class ApiClient {
     try {
       return await dio.put(path, data: data);
     } on DioError catch (e) {
-      Logger.write(e.message);
+      Logger.write(e.message.toString());
       throw ApiException(e.response!.data["message"].toString());
     }
   }
@@ -55,7 +55,7 @@ class ApiClient {
     try {
       return await dio.delete(path);
     } on DioError catch (e) {
-      Logger.write(e.message);
+      Logger.write(e.message.toString());
       throw ApiException(e.response!.data["message"].toString());
     }
   }
@@ -64,7 +64,7 @@ class ApiClient {
     try {
       return await dio.get(path);
     } on DioError catch (e) {
-      Logger.write(e.message);
+      Logger.write(e.message.toString());
       throw ApiException(e.response!.data["message"].toString());
     }
   }
