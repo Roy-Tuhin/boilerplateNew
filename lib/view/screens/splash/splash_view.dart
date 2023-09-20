@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:glitz_streamline/helpers/base_screen_view.dart';
-import 'package:glitz_streamline/routes/app_routes.dart';
-import 'package:glitz_streamline/utils/utils.dart';
-import 'package:go_router/go_router.dart';
+import 'package:malta_driver/utils/utils.dart';
 
 class SplashView extends ConsumerStatefulWidget {
   const SplashView({super.key});
@@ -14,56 +9,44 @@ class SplashView extends ConsumerStatefulWidget {
 }
 
 class _SplashViewState extends ConsumerState<SplashView> with BaseScreenView {
-  // late final SplashViewModel _viewModel;
-
   @override
   void initState() {
     super.initState();
-    // _viewModel = ref.read(splashViewModel);
-    // _viewModel.attachView(this);
-    // Future.delayed(const Duration(milliseconds: 500))
-    //     .then((value) async => _viewModel.checkToken());
+    Future.delayed(const Duration(seconds: 3))
+        .then((value) => navigateToScreen(AppRoute.onboardingView));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(AppSizes.p20),
-            child: Image.asset("assets/images/dummy.png"),
-          )
-        ],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        toolbarHeight: 0,
+      ),
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/splash_bg.webp"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Image.asset(
+            "assets/images/logo.webp",
+            height: 150.h,
+          ),
+        ),
       ),
     );
   }
 
   @override
   void navigateToScreen(AppRoute appRoute, {Map<String, String>? params}) {
-    // TODO: implement navigateToScreen
-
-    context.replaceNamed(
-      appRoute.name,
-      // {"fid": NavBarScreens.data[1].id},
-    );
+    context.goNamed(appRoute.name);
   }
 
   @override
   void showSnackbar(String message, {Color? color}) {
-    final snackBar = SnackBar(
-      backgroundColor: color,
-      content: Text(message.toString()),
-      action: SnackBarAction(
-        label: 'Close',
-        onPressed: () {
-          ScaffoldMessenger.of(context).clearSnackBars();
-          // Some code to undo the change.
-        },
-      ),
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    // TODO: implement showSnackbar
+    // implement showSnackbar
   }
 }

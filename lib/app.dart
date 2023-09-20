@@ -1,8 +1,10 @@
-import 'package:glitz_streamline/domain/providers/router_provider.dart';
-import 'package:glitz_streamline/domain/providers/theme_provider.dart';
-import 'package:glitz_streamline/utils/themes.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:malta_driver/domain/providers/router_provider.dart';
+import 'package:malta_driver/domain/providers/theme_provider.dart';
+import 'package:malta_driver/utils/themes.dart';
 
 class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,14 +15,23 @@ class MyApp extends ConsumerWidget {
     final goRouter = ref.watch(routerProvider);
     final themeManager = ref.watch(themeProvider);
 
-    return MaterialApp.router(
-      routeInformationParser: goRouter.routeInformationParser,
-      routerDelegate: goRouter.routerDelegate,
-      routeInformationProvider: goRouter.routeInformationProvider,
-      theme: AppThemes.lightTheme,
-      darkTheme: AppThemes.darkTheme,
-      themeMode: themeManager.currentTheme,
-      debugShowCheckedModeBanner: false,
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          supportedLocales: context.supportedLocales,
+          localizationsDelegates: context.localizationDelegates,
+          locale: context.locale,
+          routeInformationParser: goRouter.routeInformationParser,
+          routerDelegate: goRouter.routerDelegate,
+          routeInformationProvider: goRouter.routeInformationProvider,
+          theme: AppThemes.lightTheme,
+          darkTheme: AppThemes.darkTheme,
+          themeMode: themeManager.currentTheme,
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }

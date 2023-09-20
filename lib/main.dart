@@ -1,4 +1,4 @@
-import 'package:glitz_streamline/environment.dart';
+import 'package:malta_driver/environment.dart';
 
 void main() {
   Environment();

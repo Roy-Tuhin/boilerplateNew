@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:glitz_streamline/services/user_detail_service.dart';
+import 'package:malta_driver/services/user_detail_service.dart';
 
 final getIt = GetIt.instance;
 

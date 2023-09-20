@@ -1,24 +1,29 @@
 import 'package:dartz/dartz.dart';
-import 'package:glitz_streamline/core/core.dart';
-import 'package:glitz_streamline/data/remote/auth/models/forget_password_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/login_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/registration_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/update_password_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/update_profile_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/userdetail_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/verify_otp_model.dart';
+import 'package:malta_driver/core/core.dart';
+import 'package:malta_driver/data/remote/auth/models/forget_password_model.dart';
+import 'package:malta_driver/data/remote/auth/models/login_model.dart';
+import 'package:malta_driver/data/remote/auth/models/registration_model.dart';
+import 'package:malta_driver/data/remote/auth/models/update_password_model.dart';
+import 'package:malta_driver/data/remote/auth/models/update_profile_model.dart';
+import 'package:malta_driver/data/remote/auth/models/userdetail_model.dart';
+import 'package:malta_driver/data/remote/auth/models/verify_otp_model.dart';
 
 abstract class AuthRepo {
   Future<Either<ApiException, LoginResponse>> login(LoginRequest loginRequest);
   Future<Either<ApiException, RegistrationResponse>> register(
-      RegistrationRequest registrationRequest);
+    RegistrationRequest registrationRequest,
+  );
   Future<Either<ApiException, UserDetailResponse>> getUserDetail(String userId);
   Future<Either<ApiException, UpdateProfileResponse>> updateProfile(
-      UpdateProfileRequest updateProfileRequest);
+    UpdateProfileRequest updateProfileRequest,
+  );
   Future<Either<ApiException, ForgetPasswordResponse>> forgetPassword(
-      ForgetPasswordRequest forgetPasswordRequest);
+    ForgetPasswordRequest forgetPasswordRequest,
+  );
   Future<Either<ApiException, VerifyOtpResponse>> verifyOtp(
-      VerifyOtpRequest verifyOtpRequest);
+    VerifyOtpRequest verifyOtpRequest,
+  );
   Future<Either<ApiException, UpdatePasswordResponse>> updatePassword(
-      UpdatePasswordRequest updatePasswordRequest);
+    UpdatePasswordRequest updatePasswordRequest,
+  );
 }

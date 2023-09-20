@@ -1,17 +1,15 @@
 import 'package:dartz/dartz.dart';
-import 'package:glitz_streamline/core/api_client.dart';
-import 'package:glitz_streamline/core/core.dart';
-import 'package:glitz_streamline/core/endpoints.dart';
-import 'package:glitz_streamline/core/exceptions.dart';
-import 'package:glitz_streamline/data/remote/auth/auth_repo.dart';
-import 'package:glitz_streamline/data/remote/auth/models/forget_password_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/login_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/registration_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/update_password_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/update_profile_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/userdetail_model.dart';
-import 'package:glitz_streamline/data/remote/auth/models/verify_otp_model.dart';
-import 'package:glitz_streamline/utils/utils.dart';
+import 'package:malta_driver/core/core.dart';
+import 'package:malta_driver/core/endpoints.dart';
+import 'package:malta_driver/data/remote/auth/auth_repo.dart';
+import 'package:malta_driver/data/remote/auth/models/forget_password_model.dart';
+import 'package:malta_driver/data/remote/auth/models/login_model.dart';
+import 'package:malta_driver/data/remote/auth/models/registration_model.dart';
+import 'package:malta_driver/data/remote/auth/models/update_password_model.dart';
+import 'package:malta_driver/data/remote/auth/models/update_profile_model.dart';
+import 'package:malta_driver/data/remote/auth/models/userdetail_model.dart';
+import 'package:malta_driver/data/remote/auth/models/verify_otp_model.dart';
+import 'package:malta_driver/utils/utils.dart';
 
 class AuthRepoImpl implements AuthRepo {
   final ApiClient _apiClient;
@@ -20,7 +18,8 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<ApiException, LoginResponse>> login(
-      LoginRequest loginRequest) async {
+    LoginRequest loginRequest,
+  ) async {
     try {
       final response = await _apiClient.post(
         "${AppConstants.baseUrl}$loginEndpoint",
@@ -36,12 +35,14 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<ApiException, RegistrationResponse>> register(
-      RegistrationRequest registrationRequest) async {
+    RegistrationRequest registrationRequest,
+  ) async {
     // TODO: implement register
     try {
       final response = await _apiClient.post(
-          "${AppConstants.baseUrl}$registrationEndpoint",
-          registrationRequest.toJson());
+        "${AppConstants.baseUrl}$registrationEndpoint",
+        registrationRequest.toJson(),
+      );
       Logger.write(response.toString());
 
       return Right(RegistrationResponse.fromJson(response.data!));
@@ -53,7 +54,8 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<ApiException, UserDetailResponse>> getUserDetail(
-      String userId) async {
+    String userId,
+  ) async {
     // TODO: implement register
     try {
       final response =
@@ -69,12 +71,14 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<ApiException, UpdateProfileResponse>> updateProfile(
-      UpdateProfileRequest updateProfileRequest) async {
+    UpdateProfileRequest updateProfileRequest,
+  ) async {
     // TODO: implement register
     try {
       final response = await _apiClient.post(
-          "${AppConstants.baseUrl}$profileUpdate${AppConstants.userId}",
-          updateProfileRequest.toJson());
+        "${AppConstants.baseUrl}$profileUpdate${AppConstants.userId}",
+        updateProfileRequest.toJson(),
+      );
       Logger.write(response.toString());
 
       return Right(UpdateProfileResponse.fromJson(response.data!));
@@ -86,11 +90,14 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<ApiException, ForgetPasswordResponse>> forgetPassword(
-      ForgetPasswordRequest forgetPasswordRequest) async {
+    ForgetPasswordRequest forgetPasswordRequest,
+  ) async {
     // TODO: implement register
     try {
       final response = await _apiClient.post(
-          "${AppConstants.baseUrl}$forget", forgetPasswordRequest.toJson());
+        "${AppConstants.baseUrl}$forget",
+        forgetPasswordRequest.toJson(),
+      );
       Logger.write(response.toString());
 
       return Right(ForgetPasswordResponse.fromJson(response.data!));
@@ -102,12 +109,14 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<ApiException, VerifyOtpResponse>> verifyOtp(
-      VerifyOtpRequest verifyOtpRequest) async {
+    VerifyOtpRequest verifyOtpRequest,
+  ) async {
     // TODO: implement register
     try {
       final response = await _apiClient.post(
-          "${AppConstants.baseUrl}$verifyOtpEndPoint",
-          verifyOtpRequest.toJson());
+        "${AppConstants.baseUrl}$verifyOtpEndPoint",
+        verifyOtpRequest.toJson(),
+      );
       Logger.write(response.toString());
 
       return Right(VerifyOtpResponse.fromJson(response.data!));
@@ -119,11 +128,14 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<ApiException, UpdatePasswordResponse>> updatePassword(
-      UpdatePasswordRequest updatePasswordRequest) async {
+    UpdatePasswordRequest updatePasswordRequest,
+  ) async {
     // TODO: implement register
     try {
       final response = await _apiClient.post(
-          "${AppConstants.baseUrl}$updatePass", updatePasswordRequest.toJson());
+        "${AppConstants.baseUrl}$updatePass",
+        updatePasswordRequest.toJson(),
+      );
       Logger.write(response.toString());
 
       return Right(UpdatePasswordResponse.fromJson(response.data!));

@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_dynamic_calls
 
 import 'package:dio/dio.dart';
-import 'package:glitz_streamline/core/core.dart';
-import 'package:glitz_streamline/utils/logger.dart';
 import 'package:http/http.dart' as http;
+import 'package:malta_driver/core/core.dart';
+import 'package:malta_driver/utils/logger.dart';
 
 class ApiClient {
   static const String TOP_HEADLINES = 'top-headlines';
@@ -33,9 +33,11 @@ class ApiClient {
     dynamic data,
   ) async {
     try {
-      return await dio.post(path,
-          data: data,
-          options: Options(headers: {"Cookie": "jwt=${AppConstants.token}"}));
+      return await dio.post(
+        path,
+        data: data,
+        options: Options(headers: {"Cookie": "jwt=${AppConstants.token}"}),
+      );
     } on DioError catch (e) {
       Logger.write(e.message.toString());
       throw ApiException(e.response!.data["message"].toString());
@@ -78,9 +80,9 @@ class MultiPartClient extends http.BaseClient {
     request.persistentConnection = false;
 
     request.headers["Content-Type"] = "application/json";
-    print(request.headers.toString());
+    print(request.headers);
 
-    print(request.url.toString());
+    print(request.url);
     // Future<http.StreamedResponse> response = _httpClient.send(request);
     // alice.onHttpClientRequest(request.)
     // debugPrint(request.url.toString());

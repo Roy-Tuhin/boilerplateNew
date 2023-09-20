@@ -1,7 +1,7 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:glitz_streamline/utils/colors.dart';
+import 'package:malta_driver/utils/colors.dart';
 
 class AppThemes {
   AppThemes._();
@@ -34,7 +34,7 @@ class AppThemes {
 
   //form input colors
   static const Color _lightInputFillColor = _lightBackgroundSecondaryColor;
-  static const Color _lightBorderActiveColor = _darkBackgroundColor;
+  static const Color _lightBorderActiveColor = Color(0xFFBCBCBC);
   // static const Color _darkBorderActiveColor = _lightBackgroundColor;
 
   static const Color _lightBorderErrorColor = kBrinkPink;
@@ -67,19 +67,28 @@ class AppThemes {
   static const Color _darkIconColor = kNevada;
 
   static const Color _darkInputFillColor = _darkBackgroundSecondaryColor;
-  static const Color _darkBorderActiveColor = _lightBackgroundColor;
+  static const Color _darkBorderActiveColor = Color(0xFFBCBCBC);
   static const Color _darkBorderErrorColor = kBrinkPink;
 
   //text theme for light theme
   static const TextTheme _lightTextTheme = TextTheme(
     headline1: TextStyle(
-        fontSize: 20.0, color: _lightTextColor, fontFamily: "Montserrat"),
+      fontSize: 20.0,
+      color: _lightTextColor,
+      fontFamily: "Montserrat",
+    ),
     bodyText1: TextStyle(
-        fontSize: 16.0, color: _lightTextColor, fontFamily: "Montserrat"),
+      fontSize: 16.0,
+      color: _lightTextColor,
+      fontFamily: "Montserrat",
+    ),
     bodyText2:
         TextStyle(fontSize: 14.0, color: kGrey, fontFamily: "Montserrat"),
     headline3: TextStyle(
-        fontSize: 16, color: _darkTextColor, fontFamily: "Montserrat"),
+      fontSize: 16,
+      color: _darkTextColor,
+      fontFamily: "Montserrat",
+    ),
     button: TextStyle(
       fontSize: 15.0,
       color: _lightTextColor,
@@ -87,9 +96,15 @@ class AppThemes {
       fontFamily: "Montserrat",
     ),
     headline6: TextStyle(
-        fontSize: 16.0, color: _lightTextColor, fontFamily: "Montserrat"),
+      fontSize: 16.0,
+      color: _lightTextColor,
+      fontFamily: "Montserrat",
+    ),
     subtitle1: TextStyle(
-        fontSize: 16.0, color: _lightTextColor, fontFamily: "Montserrat"),
+      fontSize: 16.0,
+      color: _lightTextColor,
+      fontFamily: "Montserrat",
+    ),
     caption: TextStyle(
       fontSize: 12.0,
       color: _lightBackgroundAppBarColor,
@@ -100,6 +115,7 @@ class AppThemes {
   //the light theme
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
+    useMaterial3: true,
     cardColor: kBlack,
     fontFamily: "Montserrat",
     bottomAppBarColor: bottomnavLightbackgroundColor,
@@ -166,30 +182,48 @@ class AppThemes {
 
   static const TextTheme _darkTextTheme = TextTheme(
     headline1: TextStyle(
-        fontSize: 20.0, color: _darkTextColor, fontFamily: "Montserrat"),
+      fontSize: 20.0,
+      color: _darkTextColor,
+      fontFamily: "Montserrat",
+    ),
     bodyText1: TextStyle(
-        fontSize: 16.0, color: _darkTextColor, fontFamily: "Montserrat"),
+      fontSize: 16.0,
+      color: _darkTextColor,
+      fontFamily: "Montserrat",
+    ),
     bodyText2:
         TextStyle(fontSize: 14.0, color: kGrey, fontFamily: "Montserrat"),
     headline3: TextStyle(
-        fontSize: 16, color: _lightTextColor, fontFamily: "Montserrat"),
+      fontSize: 16,
+      color: _lightTextColor,
+      fontFamily: "Montserrat",
+    ),
     button: TextStyle(
-        fontSize: 15.0,
-        color: _darkTextColor,
-        fontWeight: FontWeight.w600,
-        fontFamily: "Montserrat"),
+      fontSize: 15.0,
+      color: _darkTextColor,
+      fontWeight: FontWeight.w600,
+      fontFamily: "Montserrat",
+    ),
     headline6: TextStyle(
-        fontSize: 16.0, color: _darkTextColor, fontFamily: "Montserrat"),
+      fontSize: 16.0,
+      color: _darkTextColor,
+      fontFamily: "Montserrat",
+    ),
     subtitle1: TextStyle(
-        fontSize: 16.0, color: _darkTextColor, fontFamily: "Montserrat"),
+      fontSize: 16.0,
+      color: _darkTextColor,
+      fontFamily: "Montserrat",
+    ),
     caption: TextStyle(
-        fontSize: 12.0,
-        color: _darkBackgroundAppBarColor,
-        fontFamily: "Montserrat"),
+      fontSize: 12.0,
+      color: _darkBackgroundAppBarColor,
+      fontFamily: "Montserrat",
+    ),
   );
 
   //the dark theme
   static final ThemeData darkTheme = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.dark, //prefix icon color form input on focus
     bottomAppBarColor: bottomnavdarkbackgroundColor,
     cardColor: kWhite,

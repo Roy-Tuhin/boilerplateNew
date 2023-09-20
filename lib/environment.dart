@@ -1,10 +1,8 @@
 // import 'package:firebase_core/firebase_core.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:glitz_streamline/app.dart';
-import 'package:glitz_streamline/helpers/locator.dart';
-import 'package:glitz_streamline/services/shared_preference_service.dart';
-import 'package:glitz_streamline/utils/utils.dart';
+import 'package:malta_driver/languages/codegen_loader.g.dart';
+import 'package:malta_driver/utils/utils.dart';
 
 enum EnvType {
   DEVELOPMENT,
@@ -20,6 +18,8 @@ class Environment {
 
   Future<void> _init() async {
     WidgetsFlutterBinding.ensureInitialized();
+    await EasyLocalization.ensureInitialized();
+
     // await Firebase.initializeApp();
     // await FirebaseMessagingProvider.init();
     await SharedPreferenceService.init();
@@ -31,8 +31,18 @@ class Environment {
       Logger.write(e.toString());
     }
     runApp(
-      ProviderScope(
-        child: MyApp(),
+      EasyLocalization(
+        fallbackLocale: const Locale('en'),
+        path: 'assets/languages',
+        assetLoader: const CodegenLoader(),
+        startLocale: const Locale('en'),
+        supportedLocales: const [
+          Locale('en'),
+          Locale('de'),
+        ],
+        child: const ProviderScope(
+          child: MyApp(),
+        ),
       ),
     );
   }
