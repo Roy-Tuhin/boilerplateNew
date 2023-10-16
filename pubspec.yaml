@@ -1,4 +1,4 @@
-name: malta_driver
+name: applied_nurses
 description: A new Flutter project.
 version: 1.0.5+5
 
@@ -6,19 +6,17 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  agora_rtc_engine: ^6.1.0
-  agora_rtm: ^1.5.0
   animated_bottom_navigation_bar: ^1.1.0+1
   animations: ^2.0.8
   auto_size_text: ^3.0.0
   cached_network_image: ^3.2.3
-  card_swiper: ^3.0.1
   change_app_package_name: ^1.1.0
   connectivity_plus: null
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^5.3.0
   easy_localization: ^3.0.3
+  flextras: ^1.0.0
   flutter:
     sdk: flutter
   flutter_animate: ^4.2.0+1
@@ -30,11 +28,10 @@ dependencies:
   get_it: ^7.2.0
   go_router: ^10.0.0
   google_fonts: ^5.1.0
+  iconly: ^1.0.1
   image_picker: ^1.0.1
   injectable: null
   intl: ^0.18.0
-  introduction_screen: ^3.1.4
-  outline_gradient_button: ^2.0.0+1
   path_provider: ^2.0.11
   permission_handler: ^10.2.0
   pin_code_fields: ^8.0.1
@@ -58,8 +55,6 @@ flutter:
   assets:
     - assets/languages/
     - assets/images/
-    - assets/dummy/
-    - assets/genre/
     - assets/icons/
   fonts:
     - family: Montserrat

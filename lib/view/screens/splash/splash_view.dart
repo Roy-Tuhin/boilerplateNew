@@ -1,5 +1,5 @@
+import 'package:applied_nurses/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/utils/utils.dart';
 
 class SplashView extends ConsumerStatefulWidget {
   const SplashView({super.key});
@@ -13,7 +13,7 @@ class _SplashViewState extends ConsumerState<SplashView> with BaseScreenView {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3))
-        .then((value) => navigateToScreen(AppRoute.onboardingView));
+        .then((value) => navigateToScreen(AppRoute.loginView));
   }
 
   @override
@@ -33,7 +33,7 @@ class _SplashViewState extends ConsumerState<SplashView> with BaseScreenView {
         child: Center(
           child: Image.asset(
             "assets/images/logo.webp",
-            height: 150.h,
+            height: 90.h,
           ),
         ),
       ),

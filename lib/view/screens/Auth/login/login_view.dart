@@ -1,8 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:applied_nurses/utils/custom_button.dart';
+import 'package:applied_nurses/utils/utils.dart';
+import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/languages/locale_keys.g.dart';
-import 'package:malta_driver/utils/custom_button.dart';
-import 'package:malta_driver/utils/utils.dart';
 
 class LoginView extends ConsumerStatefulWidget {
   const LoginView({super.key});
@@ -12,155 +11,115 @@ class LoginView extends ConsumerStatefulWidget {
 }
 
 class _LoginViewState extends ConsumerState<LoginView> with BaseScreenView {
-  List<String> social = [
-    "assets/icons/google.png",
-    "assets/icons/facebook.png",
-    "assets/icons/email.png",
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          LocaleKeys.byContinuing.tr(),
-          style: const TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w400,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
+      backgroundColor: white,
       body: SingleChildScrollView(
-        child: Column(
+        child: PaddedColumn(
+          padding: EdgeInsets.symmetric(horizontal: 0.w),
           children: [
             Container(
-              height: 220.h,
+              height: 237.h,
               decoration: const BoxDecoration(
-                color: primaryColor,
+                color: background,
                 image: DecorationImage(
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                   image: AssetImage("assets/images/login_bg.png"),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            Text(
-              LocaleKeys.welcomeToMaltaTaxi.tr(),
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.black,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
             gapH40,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 1,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(color: Color(0xFFCFCFCF)),
-                    ),
-                  ),
-                  gapW16,
-                  Text(
-                    LocaleKeys.loginOrSignUp.tr(),
-                    style: const TextStyle(
-                      fontSize: 12,
+            PaddedColumn(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              children: [
+                TextFormField(
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    hintText: "Enter your email address",
+                    labelText: "Email",
+                    floatingLabelStyle: TextStyle(
+                      color: text,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  gapW16,
-                  Expanded(
-                    child: Container(
-                      height: 1,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(color: Color(0xFFCFCFCF)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: LocaleKeys.enterMobileNumber.tr(),
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.only(top: 16.0, left: 8),
-                    child: Text(
-                      "+356 ",
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.black,
+                ),
+                gapH16,
+                SizedBox(
+                  height: 48.h,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      suffix: InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.remove_red_eye_outlined,
+                          color: text,
+                        ),
+                      ),
+                      hintText: "Enter your password",
+                      labelText: "Password",
+                      floatingLabelStyle: TextStyle(
+                        color: text,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: CustomButton(
-                buttonColor: primaryColor,
-                textColor: Colors.white,
-                buttonText: LocaleKeys.continueText.tr(),
-                ontap: () {
-                  navigateToScreen(AppRoute.otpVerifyView);
-                },
-              ),
-            ),
-            gapH16,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 1,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(color: Color(0xFFCFCFCF)),
-                    ),
-                  ),
-                  gapW16,
-                  Text(
-                    LocaleKeys.orText.tr(),
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  gapW16,
-                  Expanded(
-                    child: Container(
-                      height: 1,
-                      width: double.infinity,
-                      decoration: const BoxDecoration(color: Color(0xFFCFCFCF)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            gapH16,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ...List.generate(
-                  social.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Image.asset(
-                      social[index],
-                      height: 30,
+                gapH16,
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: InkWell(
+                    onTap: () {},
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),
+                gapH24,
+                CustomButton(
+                  buttonColor: primaryColor,
+                  textColor: Colors.white,
+                  buttonText: "Login",
+                  ontap: () {
+                    navigateToScreen(AppRoute.otpVerifyView);
+                  },
+                ),
+                gapH20,
+                Align(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Do not have an account ?",
+                          style: TextStyle(
+                            color: text,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        gapW4,
+                        Text(
+                          "Register",
+                          style: TextStyle(
+                            color: primaryColor,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                gapH10,
               ],
             ),
           ],

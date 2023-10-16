@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:malta_driver/utils/utils.dart';
+import 'package:applied_nurses/utils/utils.dart';
+import 'package:flextras/flextras.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:malta_driver/view/screens/{{name.snakeCase()}}/{{name.snakeCase()}}_view_model.dart';
+import 'package:applied_nurses/view/screens/{{name.snakeCase()}}/{{name.snakeCase()}}_view_model.dart';
 
 class {{name.pascalCase()}}View  extends ConsumerStatefulWidget {
   const {{name.pascalCase()}}View ({super.key});
@@ -20,10 +21,10 @@ class _{{name.pascalCase()}}ViewState extends ConsumerState<{{name.pascalCase()}
             color: Colors.white, backgroundColor: primaryColor,),
         controller: ref.watch({{name.camelCase()}}ViewModelProvider).{{name.camelCase()}}RefreshController,
         onRefresh: () async {},
-        child: const SingleChildScrollView(
-          child: Column(
-            
-          ),
+        child:  SingleChildScrollView(
+          child: PaddedColumn(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            children: [])
         ) ,
     ),
     );

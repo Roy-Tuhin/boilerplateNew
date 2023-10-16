@@ -1,5 +1,5 @@
-import 'package:malta_driver/data/remote/auth/models/userdetail_model.dart';
-import 'package:malta_driver/helpers/base_view_model.dart';
+import 'package:applied_nurses/data/remote/auth/models/userdetail_model.dart';
+import 'package:applied_nurses/helpers/base_view_model.dart';
 
 class UserDetailService extends BaseViewModel {
   UserDetailResponse? _userDetailResponse;

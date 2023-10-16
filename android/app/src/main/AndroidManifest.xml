@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.garments.app">
+    package="com.appliednurses.reliablestaffing">
   
    <application
-        android:label="Boilerplate Dart3"
+        android:label="Applied Nurses"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

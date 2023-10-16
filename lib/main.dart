@@ -1,4 +1,4 @@
-import 'package:malta_driver/environment.dart';
+import 'package:applied_nurses/environment.dart';
 
 void main() {
   Environment();

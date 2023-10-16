@@ -1,10 +1,10 @@
+import 'package:applied_nurses/utils/utils.dart';
+import 'package:applied_nurses/view/screens/navigation/profile/profile_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/utils/utils.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:malta_driver/view/screens/navigation/profile/profile_view_model.dart';
 
-class ProfileView  extends ConsumerStatefulWidget {
-  const ProfileView ({super.key});
+class ProfileView extends ConsumerStatefulWidget {
+  const ProfileView({super.key});
 
   @override
   ConsumerState<ProfileView> createState() => _ProfileViewState();
@@ -13,23 +13,24 @@ class ProfileView  extends ConsumerStatefulWidget {
 class _ProfileViewState extends ConsumerState<ProfileView> with BaseScreenView {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SmartRefresher(
-       enablePullDown: false,
+        enablePullDown: false,
         header: const MaterialClassicHeader(
-            color: Colors.white, backgroundColor: primaryColor,),
-        controller: ref.watch(profileViewModelProvider).profileRefreshController,
+          color: Colors.white,
+          backgroundColor: primaryColor,
+        ),
+        controller:
+            ref.watch(profileViewModelProvider).profileRefreshController,
         onRefresh: () async {},
         child: const SingleChildScrollView(
-          child: Column(
-            
-          ),
-        ) ,
-    ),
+          child: Column(),
+        ),
+      ),
     );
   }
 
-    @override
+  @override
   void navigateToScreen(AppRoute appRoute, {Map<String, String>? params}) {
     context.goNamed(appRoute.name);
   }

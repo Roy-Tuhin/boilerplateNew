@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
-import 'package:malta_driver/core/core.dart';
-import 'package:malta_driver/data/remote/auth/models/forget_password_model.dart';
-import 'package:malta_driver/data/remote/auth/models/login_model.dart';
-import 'package:malta_driver/data/remote/auth/models/registration_model.dart';
-import 'package:malta_driver/data/remote/auth/models/update_password_model.dart';
-import 'package:malta_driver/data/remote/auth/models/update_profile_model.dart';
-import 'package:malta_driver/data/remote/auth/models/userdetail_model.dart';
-import 'package:malta_driver/data/remote/auth/models/verify_otp_model.dart';
+import 'package:applied_nurses/core/core.dart';
+import 'package:applied_nurses/data/remote/auth/models/forget_password_model.dart';
+import 'package:applied_nurses/data/remote/auth/models/login_model.dart';
+import 'package:applied_nurses/data/remote/auth/models/registration_model.dart';
+import 'package:applied_nurses/data/remote/auth/models/update_password_model.dart';
+import 'package:applied_nurses/data/remote/auth/models/update_profile_model.dart';
+import 'package:applied_nurses/data/remote/auth/models/userdetail_model.dart';
+import 'package:applied_nurses/data/remote/auth/models/verify_otp_model.dart';
 
 abstract class AuthRepo {
   Future<Either<ApiException, LoginResponse>> login(LoginRequest loginRequest);

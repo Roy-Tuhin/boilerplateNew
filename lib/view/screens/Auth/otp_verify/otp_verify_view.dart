@@ -1,8 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:applied_nurses/utils/custom_button.dart';
+import 'package:applied_nurses/utils/utils.dart';
+import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/languages/locale_keys.g.dart';
-import 'package:malta_driver/utils/custom_button.dart';
-import 'package:malta_driver/utils/utils.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpVerifyView extends ConsumerStatefulWidget {
@@ -17,121 +16,98 @@ class _OtpVerifyViewState extends ConsumerState<OtpVerifyView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 16.w,
-          vertical: 30.h,
-        ),
-        child: CustomButton(
-          buttonColor: primaryColor,
-          textColor: Colors.white,
-          buttonText: LocaleKeys.continueText.tr(),
-          ontap: () {
-            navigateToScreen(AppRoute.basicDetailView);
-          },
-        ),
-      ),
       appBar: AppBar(
         elevation: 1,
-        title: Text(
-          LocaleKeys.otpVerification.tr(),
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
         leading: InkWell(
           onTap: () {
             Navigator.of(context).pop();
           },
-          child: const Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back_ios_new),
         ),
         backgroundColor: Colors.white,
       ),
-      body: Column(
-        children: [
-          gapH24,
-          Text(
-            LocaleKeys.verificationCodeSentTo.tr(),
-            style: TextStyle(
-              color: const Color(0xFF8B8B8B),
-              fontSize: 12.sp,
-              fontFamily: 'Plus Jakarta Sans',
-              fontWeight: FontWeight.w400,
-              letterSpacing: -0.28,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/images/otp.webp",
+              height: 300.h,
+              fit: BoxFit.fill,
             ),
-          ),
-          gapH8,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '+356-1245789865',
-                style: TextStyle(
-                  color: const Color(0xFF04030D),
-                  fontSize: 12.sp,
-                  fontFamily: 'Plus Jakarta Sans',
-                  fontWeight: FontWeight.w500,
-                  height: 0,
-                  letterSpacing: -0.28,
-                ),
-              ),
-              gapW8,
-              Text(
-                'Edit ',
-                style: TextStyle(
-                  color: const Color(0xFFD90C02),
-                  fontSize: 12.sp,
-                  fontFamily: 'Plus Jakarta Sans',
-                  fontWeight: FontWeight.w500,
-                  height: 0,
-                  letterSpacing: -0.28,
-                ),
-              ),
-            ],
-          ),
-          gapH24,
-          Pinput(
-            length: 6,
-
-            // focusedPinTheme: focusedPinTheme,
-            // submittedPinTheme: submittedPinTheme,
-            validator: (s) {
-              return s == '2222' ? null : 'Pin is incorrect';
-            },
-            onCompleted: (pin) => print(pin),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            gapH24,
+            PaddedColumn(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '15 Sec',
+                  "OTP Verification",
                   style: TextStyle(
-                    color: const Color(0xFFD90C02),
-                    fontSize: 12.sp,
-                    fontFamily: 'Plus Jakarta Sans',
+                    color: black,
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.w500,
+                    letterSpacing: -0.28,
+                  ),
+                ),
+                gapH8,
+                Text(
+                  'Please enter the 4 digit code send to estherhoward@example.com',
+                  style: TextStyle(
+                    color: subtxt,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
                     height: 0,
                     letterSpacing: -0.28,
                   ),
                 ),
-                Text(
-                  LocaleKeys.resend.tr(),
-                  style: TextStyle(
-                    color: const Color(0xFF9F9F9F),
-                    fontSize: 12.sp,
-                    fontFamily: 'Plus Jakarta Sans',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                    letterSpacing: -0.28,
-                  ),
+                gapH24,
+                Pinput(
+                  // focusedPinTheme: focusedPinTheme,
+                  // submittedPinTheme: submittedPinTheme,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  validator: (s) {
+                    return s == '2222' ? null : 'Pin is incorrect';
+                  },
+                  onCompleted: (pin) => print(pin),
+                ),
+                gapH24,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      '15 Sec',
+                      style: TextStyle(
+                        color: text,
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                    gapW8,
+                    Text(
+                      "Resend it",
+                      style: TextStyle(
+                        color: brand,
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                        letterSpacing: -0.28,
+                      ),
+                    ),
+                  ],
+                ),
+                gapH24,
+                CustomButton(
+                  buttonColor: primaryColor,
+                  textColor: Colors.white,
+                  buttonText: "Continue",
+                  ontap: () {
+                    navigateToScreen(AppRoute.registerView);
+                  },
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

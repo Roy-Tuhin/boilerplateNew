@@ -1,8 +1,8 @@
 // import 'package:firebase_core/firebase_core.dart';
+
+import 'package:applied_nurses/utils/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/languages/codegen_loader.g.dart';
-import 'package:malta_driver/utils/utils.dart';
 
 enum EnvType {
   DEVELOPMENT,
@@ -34,7 +34,6 @@ class Environment {
       EasyLocalization(
         fallbackLocale: const Locale('en'),
         path: 'assets/languages',
-        assetLoader: const CodegenLoader(),
         startLocale: const Locale('en'),
         supportedLocales: const [
           Locale('en'),

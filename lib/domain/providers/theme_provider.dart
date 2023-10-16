@@ -1,4 +1,4 @@
-import 'package:malta_driver/services/shared_preference_service.dart';
+import 'package:applied_nurses/services/shared_preference_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

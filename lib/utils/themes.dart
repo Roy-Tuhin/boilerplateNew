@@ -1,7 +1,7 @@
 // ignore_for_file: unused_field, deprecated_member_use
 
+import 'package:applied_nurses/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/utils/colors.dart';
 
 class AppThemes {
   AppThemes._();
@@ -10,11 +10,11 @@ class AppThemes {
   static String font2 = "Montserrat";
 
   //main color
-  static const Color _lightPrimaryColor = kDodgerBlue;
+  static const Color _lightPrimaryColor = brand;
 
   //Background Colors
-  static const Color _lightBackgroundColor = lightBackgroundColor;
-  static const Color _lightBackgroundAppBarColor = _lightPrimaryColor;
+  static const Color _lightBackgroundColor = background;
+  static const Color _lightBackgroundAppBarColor = primaryColor;
   static const Color _lightBackgroundSecondaryColor = kWhite;
   static const Color _lightBackgroundAlertColor = kBlackPearl;
   static const Color _lightBackgroundActionTextColor = kWhite;
@@ -22,25 +22,25 @@ class AppThemes {
   static const Color _lightBackgroundSuccessColor = kJuneBud;
 
   //Text Colors
-  static const Color _lightTextColor = kBlack;
+  static const Color _lightTextColor = text;
   static const Color _lightAlertTextColor = kBlack;
-  static const Color _lightTextSecondaryColor = kBlack;
+  static const Color _lightTextSecondaryColor = subtxt;
 
   //Border Color
-  static const Color _lightBorderColor = kNevada;
+  static const Color _lightBorderColor = border;
 
   //Icon Color
-  static const Color _lightIconColor = kNevada;
+  static const Color _lightIconColor = grey01;
 
   //form input colors
   static const Color _lightInputFillColor = _lightBackgroundSecondaryColor;
-  static const Color _lightBorderActiveColor = Color(0xFFBCBCBC);
+  static const Color _lightBorderActiveColor = brand;
   // static const Color _darkBorderActiveColor = _lightBackgroundColor;
 
   static const Color _lightBorderErrorColor = kBrinkPink;
 
   //constants color range for dark theme
-  static const Color _darkPrimaryColor = kDodgerBlue;
+  static const Color _darkPrimaryColor = brand;
 
   //Background Colors
   static const Color _darkBackgroundColor = darkBackgroundColor;
@@ -71,42 +71,45 @@ class AppThemes {
   static const Color _darkBorderErrorColor = kBrinkPink;
 
   //text theme for light theme
-  static const TextTheme _lightTextTheme = TextTheme(
+  static final TextTheme _lightTextTheme = TextTheme(
     headline1: TextStyle(
-      fontSize: 20.0,
+      fontSize: 20.sp,
       color: _lightTextColor,
       fontFamily: "Montserrat",
     ),
     bodyText1: TextStyle(
-      fontSize: 16.0,
+      fontSize: 14.sp,
       color: _lightTextColor,
       fontFamily: "Montserrat",
     ),
-    bodyText2:
-        TextStyle(fontSize: 14.0, color: kGrey, fontFamily: "Montserrat"),
+    bodyText2: TextStyle(
+      fontSize: 12.sp,
+      color: subtxt,
+      fontFamily: "Montserrat",
+    ),
     headline3: TextStyle(
-      fontSize: 16,
+      fontSize: 14.sp,
       color: _darkTextColor,
       fontFamily: "Montserrat",
     ),
     button: TextStyle(
-      fontSize: 15.0,
+      fontSize: 16.sp,
       color: _lightTextColor,
       fontWeight: FontWeight.w600,
       fontFamily: "Montserrat",
     ),
     headline6: TextStyle(
-      fontSize: 16.0,
+      fontSize: 14.sp,
       color: _lightTextColor,
       fontFamily: "Montserrat",
     ),
     subtitle1: TextStyle(
-      fontSize: 16.0,
+      fontSize: 12.sp,
       color: _lightTextColor,
       fontFamily: "Montserrat",
     ),
     caption: TextStyle(
-      fontSize: 12.0,
+      fontSize: 10.sp,
       color: _lightBackgroundAppBarColor,
       fontFamily: "Montserrat",
     ),
@@ -124,8 +127,8 @@ class AppThemes {
       backgroundColor: _lightPrimaryColor,
     ),
     appBarTheme: AppBarTheme(
-      color: _lightBackgroundAppBarColor,
-      iconTheme: const IconThemeData(color: _lightTextColor),
+      color: white,
+      iconTheme: const IconThemeData(color: subtxt),
       toolbarTextStyle: _lightTextTheme.bodyText2,
       titleTextStyle: _lightTextTheme.headline6,
     ),
@@ -153,14 +156,24 @@ class AppThemes {
     unselectedWidgetColor: _lightPrimaryColor,
     inputDecorationTheme: const InputDecorationTheme(
       //prefixStyle: TextStyle(color: _lightIconColor),
-
+      hintStyle: TextStyle(
+        color: subtxt,
+        fontFamily: "Montserrat",
+        fontWeight: FontWeight.w400,
+      ),
+      labelStyle: TextStyle(
+        color: text,
+        fontFamily: "Montserrat",
+        fontWeight: FontWeight.w500,
+      ),
       border: OutlineInputBorder(
+        borderSide: BorderSide(color: _lightBorderColor),
         borderRadius: BorderRadius.all(
           Radius.circular(8.0),
         ),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: _lightBorderActiveColor),
+        borderSide: BorderSide(color: border),
         borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
       focusedBorder: OutlineInputBorder(
@@ -178,6 +191,16 @@ class AppThemes {
       fillColor: _lightBackgroundSecondaryColor,
       //focusColor: _lightBorderActiveColor,
     ),
+    listTileTheme: const ListTileThemeData(
+      tileColor: kWhite,
+      visualDensity: VisualDensity.compact,
+      contentPadding: EdgeInsets.symmetric(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(8.0),
+        ),
+      ),
+    ),
   );
 
   static const TextTheme _darkTextTheme = TextTheme(
@@ -192,7 +215,7 @@ class AppThemes {
       fontFamily: "Montserrat",
     ),
     bodyText2:
-        TextStyle(fontSize: 14.0, color: kGrey, fontFamily: "Montserrat"),
+        TextStyle(fontSize: 14.0, color: subtxt, fontFamily: "Montserrat"),
     headline3: TextStyle(
       fontSize: 16,
       color: _lightTextColor,

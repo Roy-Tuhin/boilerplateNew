@@ -3,10 +3,10 @@
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:applied_nurses/utils/app_sizes.dart';
+import 'package:applied_nurses/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:malta_driver/utils/app_sizes.dart';
-import 'package:malta_driver/utils/colors.dart';
 
 Future<File?> openPickImageModalSheet(BuildContext context) async {
   File? file;

@@ -9,22 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "61.0.0"
-  agora_rtc_engine:
-    dependency: "direct main"
-    description:
-      name: agora_rtc_engine
-      sha256: "5e0d363c8ae68b08028d19a743972278266b8cb73f81243d09bc024f5541412c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.2.1"
-  agora_rtm:
-    dependency: "direct main"
-    description:
-      name: agora_rtm
-      sha256: b3b00ef84c385bdb5ebf99402435e88662dd27adfd03e1a0eb323e9e5c7e925f
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.5.7"
   analyzer:
     dependency: transitive
     description:
@@ -169,14 +153,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
-  card_swiper:
-    dependency: "direct main"
-    description:
-      name: card_swiper
-      sha256: "21e52a144decbf0054e7cfed8bbe46fc89635e6c86b767eaccfe7d5aeba32528"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.1"
   change_app_package_name:
     dependency: "direct main"
     description:
@@ -305,14 +281,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.3.0"
-  dots_indicator:
-    dependency: transitive
-    description:
-      name: dots_indicator
-      sha256: f1599baa429936ba87f06ae5f2adc920a367b16d08f74db58c3d0f6e93bcdb5c
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.2"
   easy_localization:
     dependency: "direct main"
     description:
@@ -393,6 +361,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  flextras:
+    dependency: "direct main"
+    description:
+      name: flextras
+      sha256: e73b5c86dd9419569d2a48db470059b41b496012513e4e1bdc56ba2c661048d9
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -438,54 +414,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.7"
-  flutter_keyboard_visibility:
-    dependency: transitive
-    description:
-      name: flutter_keyboard_visibility
-      sha256: "4983655c26ab5b959252ee204c2fffa4afeb4413cd030455194ec0caa3b8e7cb"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.4.1"
-  flutter_keyboard_visibility_linux:
-    dependency: transitive
-    description:
-      name: flutter_keyboard_visibility_linux
-      sha256: "6fba7cd9bb033b6ddd8c2beb4c99ad02d728f1e6e6d9b9446667398b2ac39f08"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
-  flutter_keyboard_visibility_macos:
-    dependency: transitive
-    description:
-      name: flutter_keyboard_visibility_macos
-      sha256: c5c49b16fff453dfdafdc16f26bdd8fb8d55812a1d50b0ce25fc8d9f2e53d086
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
-  flutter_keyboard_visibility_platform_interface:
-    dependency: transitive
-    description:
-      name: flutter_keyboard_visibility_platform_interface
-      sha256: e43a89845873f7be10cb3884345ceb9aebf00a659f479d1c8f4293fcb37022a4
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
-  flutter_keyboard_visibility_web:
-    dependency: transitive
-    description:
-      name: flutter_keyboard_visibility_web
-      sha256: d3771a2e752880c79203f8d80658401d0c998e4183edca05a149f5098ce6e3d1
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
-  flutter_keyboard_visibility_windows:
-    dependency: transitive
-    description:
-      name: flutter_keyboard_visibility_windows
-      sha256: fc4b0f0b6be9b93ae527f3d527fb56ee2d918cd88bbca438c478af7bcfd0ef73
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   flutter_localizations:
     dependency: transitive
     description: flutter
@@ -613,6 +541,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  iconly:
+    dependency: "direct main"
+    description:
+      name: iconly
+      sha256: "22f16dd28984d232891299ead9d9b75ae5a32b4d9cdf63e8e574f1ceb11dcbd9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   image_picker:
     dependency: "direct main"
     description:
@@ -693,14 +629,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.18.1"
-  introduction_screen:
-    dependency: "direct main"
-    description:
-      name: introduction_screen
-      sha256: ef5a5479a8e06a84b9a7eff16c698b9b82f70cd1b6203b264bc3686f9bfb77e2
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.11"
   io:
     dependency: transitive
     description:
@@ -709,14 +637,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  iris_method_channel:
-    dependency: transitive
-    description:
-      name: iris_method_channel
-      sha256: dce2527839b46d1d0f0573b5ae1425e23a111afb280245ea1500f16a11957ad4
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   js:
     dependency: transitive
     description:
@@ -805,14 +725,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
-  outline_gradient_button:
-    dependency: "direct main"
-    description:
-      name: outline_gradient_button
-      sha256: "006673015f090c314d7a14b41216ed984b21e8b55d0c8eb502d93e0bbd6b65ba"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.1+1"
   package_config:
     dependency: transitive
     description:

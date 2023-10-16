@@ -1,5 +1,5 @@
+import 'package:applied_nurses/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/utils/utils.dart';
 
 class CustomButton extends StatefulWidget {
   final bool isLoading;

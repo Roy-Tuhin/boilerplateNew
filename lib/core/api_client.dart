@@ -2,8 +2,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
-import 'package:malta_driver/core/core.dart';
-import 'package:malta_driver/utils/logger.dart';
+import 'package:applied_nurses/core/core.dart';
+import 'package:applied_nurses/utils/logger.dart';
 
 class ApiClient {
   static const String TOP_HEADLINES = 'top-headlines';

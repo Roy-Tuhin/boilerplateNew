@@ -1,5 +1,5 @@
+import 'package:applied_nurses/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:malta_driver/routes/app_routes.dart';
 
 mixin BaseScreenView {
   void showSnackbar(String message, {Color? color});
